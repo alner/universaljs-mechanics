@@ -1,0 +1,31 @@
+{
+  "name": "universaljs-mechanics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "debug": "devtool ./bin/index.js --break",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.17.0",
+    "express": "^4.14.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-router": "^2.8.1",
+    "source-map-support": "^0.4.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-source-map-support": "0.0.1",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "devtool": "^2.2.0",
+    "source-map-support": "^0.4.3"
+  }
+}
