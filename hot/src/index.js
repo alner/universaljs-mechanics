@@ -1,4 +1,5 @@
 import render from './render';
+import './styles.css';
 
 //console.log('Hello world!');
 // document.addEventListener("DOMContentLoaded", () => {
