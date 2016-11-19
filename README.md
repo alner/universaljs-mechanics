@@ -1,3 +1,3 @@
 # UNIVERSAL JS
 
-Each folder contains self-containes project.
+Each folder contains self-contained project.
