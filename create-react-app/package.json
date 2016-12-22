@@ -1,0 +1,28 @@
+{
+  "name": "create-react-app",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:3001",
+  "devDependencies": {
+    "@kadira/storybook": "^2.21.0",
+    "concurrently": "^3.1.0",
+    "faker": "^3.1.0",
+    "json-server": "^0.9.4",
+    "lodash": "^4.17.2",
+    "react-scripts": "0.8.4"
+  },
+  "dependencies": {
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "whatwg-fetch": "^2.0.1"
+  },
+  "scripts": {
+    "start": "concurrently --kill-others \"npm run api\" \"react-scripts start\"",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public",
+    "api": "./node_modules/.bin/json-server ./api/generate.js --port 3001 --routes ./api/routes.json"
+  }
+}
