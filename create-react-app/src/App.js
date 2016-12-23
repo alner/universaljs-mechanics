@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import 'whatwg-fetch';
 import logo from './logo.svg';
+import PersonsApp from './components/PersonsApp'
 import './App.css';
 
 class App extends Component {
@@ -30,15 +31,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <ul>{this.state.persons.length && this.state.persons.map(person => {
-          return (
-            <li>
-              <div>{person.Name}</div>
-              <img src={person.Avatar} />
-            </li>
-            )
-        })}
-        </ul>
+        <PersonsApp persons={this.state.persons} />
       </div>
     );
   }

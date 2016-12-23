@@ -1,0 +1,24 @@
+.persons-app {
+    width: 66%;
+    margin: 0 auto;
+}
+
+.person-data {
+  padding-top: 51px;
+  height: 150px;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin: 15px;
+}
+
+li img{
+  border-radius: 50%;
+  margin-right: 5px;
+  float: left;
+}
