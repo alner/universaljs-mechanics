@@ -18,12 +18,15 @@ class PersonsApp extends Component {
     }
 
     render(){
+        const filteredPersons = this.props.persons.filter(person => {
+            return person.Name.indexOf(this.state.filterText) !== -1;
+        });
         return (
             <div className="persons-app">
                 <h1>Persons App</h1>
                 <SearchBar filterText={this.state.filterText} 
                     onUserInput={this.handleFilter} />
-                <PersonsList persons={this.props.persons}/>
+                <PersonsList persons={filteredPersons}/>
             </div>
         )
     }
