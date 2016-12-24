@@ -13,6 +13,16 @@ class PersonsApp extends Component {
         filterText: ''
     }
 
+    static PropTypes = {
+        persons: PropTypes.arrayOf(
+            PropTypes.shape({
+                id: PropTypes.string.isRequired,
+                Name: PropTypes.string.isRequired,
+                Avatar: PropTypes.string.isRequired
+            })
+        ).isRequired
+    }
+
     handleFilter(filterText) {
         this.setState({filterText});
     }
