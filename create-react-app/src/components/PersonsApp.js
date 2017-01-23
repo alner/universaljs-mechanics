@@ -6,7 +6,7 @@ class PersonsApp extends Component {
 
     constructor(props) {
         super(props);
-        this.handleFilter = this.handleFilter.bind(this);
+        //this.handleFilter = this.handleFilter.bind(this);
     }
 
     state = {
@@ -23,7 +23,7 @@ class PersonsApp extends Component {
         ).isRequired
     }
 
-    handleFilter(filterText) {
+    handleFilter = (filterText) => {
         this.setState({filterText});
     }
 

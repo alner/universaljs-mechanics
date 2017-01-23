@@ -1,0 +1,48 @@
+import { createStore, combineReducers, applyMiddleware } from 'redux'; // , compose
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux'; // routerMiddleware
+import { browserHistory } from 'react-router';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import createSagaMiddleware from 'redux-saga'
+import * as reducers from './reducers';
+import rootSaga from './saga';
+import { initLoad } from './actions';
+
+/*
+import { routerMiddleware, push } from 'react-router-redux'
+
+// Apply the middleware to the store
+const middleware = routerMiddleware(browserHistory)
+const store = createStore(
+  reducers,
+  applyMiddleware(middleware)
+)
+
+// Dispatch from anywhere like normal.
+store.dispatch(push('/foo'))
+*/
+
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+ 
+
+const sagaMiddleware = createSagaMiddleware();      
+const middlewares = [sagaMiddleware];
+const store = createStore(
+    combineReducers({
+        ...reducers,
+        routing: routerReducer
+    }),
+    //applyMiddleware(...middlewares)
+    composeWithDevTools(
+        applyMiddleware(...middlewares),
+        // other store enhancers if any
+    )
+    //window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    //composeEnhancers(applyMiddleware(...middlewares))
+);
+sagaMiddleware.run(rootSaga);
+store.dispatch(initLoad());
+
+// Create an enhanced history that syncs navigation events with the store
+export const history = syncHistoryWithStore(browserHistory, store);
+
+export default store;
