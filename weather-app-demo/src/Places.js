@@ -1,5 +1,5 @@
 import React from 'react';
 
 export default () => (
-    <div>Places</div>
+    <div><h1>Places</h1></div>
 )

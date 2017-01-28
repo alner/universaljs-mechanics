@@ -1,2 +1,7 @@
 export const INIT_WEATHER = 'INIT_WEATHER';
 export const INIT_LOAD = 'INIT_LOAD';
+export const INIT_LOAD_SUCCEDED = 'INIT_LOAD_SUCCEDED';
+export const INIT_LOAD_FAILED = 'INIT_LOAD_FAILED';
+export const ADD_PLACE = 'ADD_PLACE';
+export const ADD_PLACE_SUCCEDED = 'ADD_PLACE_SUCCEDED';
+export const ADD_PLACE_FAILED = 'ADD_PLACE_FAILED';

@@ -6,7 +6,16 @@ const WEATHER_URL = `http://api.openweathermap.org/data/2.5/weather?units=metric
 import data from './data.json';
 
 export function getData() {
-    return Promise.resolve(data); // fake api
+    return new Promise((resolve, reject) => 
+        setTimeout(() => {
+            if(Math.random()<0.3)
+                reject("Bad network request");
+            else
+                resolve(data);
+        }
+        ,1500)
+    ) 
+    //Promise.resolve(data); // fake api
 }
 
 export function getWeatherByCity(city) {

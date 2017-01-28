@@ -25,3 +25,8 @@ react-router
 redux (createStore, combineReducers)
 react-redux (Provider)
 react-router-redux (syncHistoryWithStore, routerReducer)
+redux-saga
+
+# TODO
+
+Places => PlacesContainer (remove MainContainer)

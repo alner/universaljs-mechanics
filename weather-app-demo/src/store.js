@@ -40,7 +40,7 @@ const store = createStore(
     //composeEnhancers(applyMiddleware(...middlewares))
 );
 sagaMiddleware.run(rootSaga);
-store.dispatch(initLoad());
+store.dispatch(initLoad()); // start initialization data process...
 
 // Create an enhanced history that syncs navigation events with the store
 export const history = syncHistoryWithStore(browserHistory, store);

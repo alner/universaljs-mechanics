@@ -5,10 +5,15 @@ export function places(state = [], action) {
 }
 
 export function weather(state = {}, action) {
-    console.log('weather: ', action);
+    console.log('Weather reducer: ', state, action);
     switch(action.type){
+        case actionTypes.INIT_LOAD:
+            return {...state, isLoading: true}
         case actionTypes.INIT_WEATHER:
-            return action.payload;
+            return {...action.payload, isLoading: false};
+        case actionTypes.INIT_LOAD_FAILED:
+            return {...state, isLoading: false, error: action.error};
+        default:
+            return state;
     }
-    return state;    
 }
