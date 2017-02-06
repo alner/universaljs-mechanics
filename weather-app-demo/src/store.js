@@ -1,9 +1,9 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux'; // , compose
-import { syncHistoryWithStore, routerReducer } from 'react-router-redux'; // routerMiddleware
+import { createStore,  applyMiddleware } from 'redux'; // , compose
+import { syncHistoryWithStore } from 'react-router-redux'; // routerMiddleware
 import { browserHistory } from 'react-router';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga'
-import * as reducers from './reducers';
+import rootReducer from './reducers';
 import rootSaga from './saga';
 import { initLoad } from './actions';
 
@@ -27,10 +27,7 @@ store.dispatch(push('/foo'))
 const sagaMiddleware = createSagaMiddleware();      
 const middlewares = [sagaMiddleware];
 const store = createStore(
-    combineReducers({
-        ...reducers,
-        routing: routerReducer
-    }),
+    rootReducer,
     //applyMiddleware(...middlewares)
     composeWithDevTools(
         applyMiddleware(...middlewares),
@@ -39,6 +36,14 @@ const store = createStore(
     //window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     //composeEnhancers(applyMiddleware(...middlewares))
 );
+
+if(module.hot) {
+    module.hot.accept('./reducers', () => {
+        const nextReducer = require('./reducers');
+        store.replaceReducer(nextReducer);
+    });
+}
+
 sagaMiddleware.run(rootSaga);
 store.dispatch(initLoad()); // start initialization data process...
 

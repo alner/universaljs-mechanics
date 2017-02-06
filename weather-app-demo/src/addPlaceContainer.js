@@ -1,12 +1,14 @@
+// eslint-disable-next-line
 import React from 'react';
 import { connect } from 'react-redux';
 import AddPlace from './addPlace';
 import { addPlace } from './actions'
 
-const mapStateToProps = (state, ownProps) => {
-    console.log(state, ownProps)
-    return {}
-}
+// const mapStateToProps = (state, ownProps) => {
+//     console.log(state, ownProps)
+//     return {}
+// }
+
 const mapDispatchToProps = (dispatch, ownProps) => {
     console.log(dispatch, ownProps);
     return {

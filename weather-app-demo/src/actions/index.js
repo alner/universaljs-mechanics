@@ -34,6 +34,13 @@ export function initWeather(data) {
 export function addPlace(place) {
     return {
         type:actionTypes.ADD_PLACE,
-        payload: place
+        place
+    }
+}
+
+export function removePlace(place) {
+    return {
+        type: actionTypes.REMOVE_PLACE,
+        place
     }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { Router, IndexRoute, Route } from 'react-router'; // hashHistory
 import { Provider } from 'react-redux';
 import MainContainer from './MainContainer';
-import Places from './Places';
+import WeatherList from './WeatherList';
 import About from './About';
 import store, { history } from './store';
 // import * as actions from './actions';
@@ -21,7 +21,7 @@ export default () => (
     <Provider store={store}>
         <Router history={history}> 
             <Route path="/" component={MainContainer}>
-                <IndexRoute component={Places} />
+                <IndexRoute component={WeatherList} />
                 <Route path="/about" component={About} />
             </Route>
         </Router>

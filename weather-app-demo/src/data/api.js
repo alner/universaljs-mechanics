@@ -18,8 +18,11 @@ export function getData() {
     //Promise.resolve(data); // fake api
 }
 
-export function getWeatherByCity(city) {
-  return fetch(`${WEATHER_URL}&q=${city}`)
+export function getWeatherByPlace(place) {
+  return fetch(`${WEATHER_URL}&q=${place}`)
     .then(response => response.json())
-    .then(json => json)
+    .then(data => ({
+        place,
+        data
+    }))
 }
