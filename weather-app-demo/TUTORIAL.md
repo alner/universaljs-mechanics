@@ -25,8 +25,16 @@ react-router
 redux (createStore, combineReducers)
 react-redux (Provider)
 react-router-redux (syncHistoryWithStore, routerReducer)
-redux-saga
+redux-saga (redux-thunk)
+
+reselect ?
+
+# Tools
+
+flow
+eslint
 
 # TODO
 
-Places => PlacesContainer (remove MainContainer)
+Universal app
+Express server
