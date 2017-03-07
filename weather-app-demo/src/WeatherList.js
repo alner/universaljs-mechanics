@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 
 import AddPlace from './addPlaceContainer';
 import WeatherItem from './WeatherItem';
+import './WeatherList.css';
 
 const WeatherList = ({weather, removePlace}) => {
     console.log(weather);
     return (
-        <div className="weather-panel">
+        <div className="weather-list">
             <AddPlace />
             <div style={{textAlign: "justify"}}>
                 {weather.isLoading &&

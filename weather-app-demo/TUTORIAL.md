@@ -28,6 +28,7 @@ react-router-redux (syncHistoryWithStore, routerReducer)
 redux-saga (redux-thunk)
 
 reselect ?
+redux-form ?
 
 # Tools
 
